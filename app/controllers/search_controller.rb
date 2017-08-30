@@ -7,9 +7,12 @@ class SearchController < ApplicationController
       faraday.adapter Faraday.default_adapter
     end
 
-    response = @conn.get("nearest.json?location=#{zipcode}")
+    response = @conn.get("nearest.json?location=#{zipcode}&limit=10")
     results = JSON.parse(response.body, symbolize_names: true)
 
-
+    @fuel_stations = results[:fuel_stations].map do |result|
+      FuelStation.new(result)
+    end
+    # binding.pry
   end
 end

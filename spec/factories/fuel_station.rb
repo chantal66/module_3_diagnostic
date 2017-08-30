@@ -1,10 +1,11 @@
-# FactoryGirl.define do
-#   factory station do
-#     name "Station name"
-#     street_address  "8000 w crestline"
-#     city 'Denver'
-#     fuel_types 'gas'
-#     distance '0.03'
-#     access_time '24 hours'
-#   end
-# end
+FactoryGirl.define do
+  factory :fuel_station do
+    name "UDR"
+    street_address  "800 Acoma St"
+    city 'Denver'
+    state 'CO'
+    fuel_types 'ELEC'
+    distance '0.3142'
+    access_time '24 hours daily'
+  end
+end

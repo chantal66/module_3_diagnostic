@@ -1,12 +1,13 @@
 <h2>Search Results</h2>
 
-<% @fuel_stations.each do |station| %>
-    Station Name: <%= station.name %>
-    Phone: <%= station.phone %>
-    Fuel Type: <%= station.fuel_type %>
-    Distance: <%= station.distance %> miles
-    Access: <%= station.access %>
-    Address: <%= station.street_address %> <%= station.city %> <%= station.state %>
+<ul class="closest_stations"><% @fuel_stations.each do |station| %> <br>
+    <li>Station Name: <%= station.name %> <br></li>
+    <li>Phone: <%= station.phone %> <br></li>
+    <li>Fuel Type: <%= station.fuel_type %> <br></li>
+    <li>Distance: <%= station.distance %> miles <br></li>
+    <li>Access: <%= station.access %> <br></li>
+      <li>Address: <%= station.street_address %> <%= station.city %> <%= station.state %> <br> </li>
     _____________________________________________________________________________________________
 
 <% end %>
+</ul>
