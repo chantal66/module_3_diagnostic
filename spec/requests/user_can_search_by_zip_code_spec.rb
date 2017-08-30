@@ -10,8 +10,7 @@ require 'rails_helper'
 
 RSpec.describe 'user can search by zipcode' do
   scenario "when filling in search form" do
-    fuel_station = create(:fuel_station)
-    binding.pry
+
     visit root_path
 
     expect(page.status_code).to eq (200)
@@ -20,11 +19,11 @@ RSpec.describe 'user can search by zipcode' do
     click_on "Locate"
 
     expect(current_path).to eq search_path
-    expect(page).to have_content(fuel_station.name)
-    expect(page).to have_content(fuel_station.address)
-    expect(page).to have_content(fuel_station.fuel_types)
-    expect(page).to have_content(fuel_station.distance)
-    expect(page).to have_content(fuel_station.access_time)
-    expect(page).to have_css('.closest_stations', count: 10)
+    expect(page).to have_content("UDR")
+    expect(page).to have_content('800 Acoma St')
+    expect(page).to have_content('Denver')
+    expect(page).to have_content('CO')
+    expect(page).to have_content(' 0.31422 miles')
+    expect(page).to have_content('24 hours daily')
   end
 end

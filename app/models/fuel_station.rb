@@ -19,4 +19,6 @@ class FuelStation
     @city           = attr[:city]
     @state          = attr[:state]
   end
+
+
 end
