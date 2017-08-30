@@ -1,0 +1,12 @@
+<h2>Search Results</h2>
+
+<% @fuel_stations.each do |station| %>
+    Station Name: <%= station.name %>
+    Phone: <%= station.phone %>
+    Fuel Type: <%= station.fuel_type %>
+    Distance: <%= station.distance %> miles
+    Access: <%= station.access %>
+    Address: <%= station.street_address %> <%= station.city %> <%= station.state %>
+    _____________________________________________________________________________________________
+
+<% end %>
