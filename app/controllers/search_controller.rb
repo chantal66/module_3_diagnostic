@@ -13,6 +13,5 @@ class SearchController < ApplicationController
     @fuel_stations = results[:fuel_stations].map do |result|
       FuelStation.new(result)
     end
-    # binding.pry
   end
 end
