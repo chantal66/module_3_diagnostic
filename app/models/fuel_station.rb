@@ -20,5 +20,9 @@ class FuelStation
     @state          = attr[:state]
   end
 
-
+  def search_nearest_stations(zipcode)
+    fuel_stations = FuelStationService.search_nearest_stations(zipcode).map do |station|
+      FuelStation.new(station)
+    end
+  end
 end
